@@ -1,10 +1,9 @@
 ### create
 
-POST http://localhost:3333/create
+GET http://localhost:3333/admin
 Content-Type: application/json
 
 {
-	"email": "gustavo@teste.com",
-	"name": "Gustavo Lage",
+	"email": "gustavolage200@gmail.comuh",
 	"password": "06052001gl"
 }
