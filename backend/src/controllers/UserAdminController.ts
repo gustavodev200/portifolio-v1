@@ -9,18 +9,6 @@ interface IUserAdmin {
 }
 
 class UserAdminController {
-  // async create(req: Request, res: Response) {
-  //   const { name, email, password }: IUserAdmin = req.body;
-  //   const salt = await bcrypt.genSalt(12);
-  //   const passwordHash = await bcrypt.hash(password, salt);
-  //   const user = await UserAdmin.create({
-  //     email,
-  //     name,
-  //     password: passwordHash,
-  //   });
-  //   return res.status(201).json(user);
-  // }
-
   async login(req: Request, res: Response) {
     const { email, password }: IUserAdmin = req.body;
 
@@ -54,6 +42,18 @@ class UserAdminController {
       .status(200)
       .json({ message: "Administrador logado com sucesso!", user });
   }
+
+  // async create(req: Request, res: Response) {
+  //   const { name, email, password }: IUserAdmin = req.body;
+  //   const salt = await bcrypt.genSalt(12);
+  //   const passwordHash = await bcrypt.hash(password, salt);
+  //   const user = await UserAdmin.create({
+  //     email,
+  //     name,
+  //     password: passwordHash,
+  //   });
+  //   return res.status(201).json(user);
+  // }
 }
 
 export default new UserAdminController();
