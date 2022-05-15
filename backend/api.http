@@ -1,9 +1,19 @@
-### create
+## create
 
-GET http://localhost:3333/admin
+# GET http://localhost:3333/admin
+# Content-Type: application/json
+
+# {
+# 	"email": "gustavolage200@gmail.com",
+# 	"password": "06052001gl"
+# }
+
+POST  http://localhost:3333/admin/add-project
 Content-Type: application/json
 
 {
-	"email": "gustavolage200@gmail.comuh",
-	"password": "06052001gl"
+  "image": "",
+	"title": "gustavolage200@gmail.com",
+	"tag": "#PESSOAL",
+  "description": "Projetin Fellas"
 }
