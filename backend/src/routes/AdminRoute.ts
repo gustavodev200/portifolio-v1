@@ -4,6 +4,6 @@ import UserAdminController from "../controllers/UserAdminController";
 const router = express.Router();
 
 router.post("/create", UserAdminController.create);
-router.get("/admin", UserAdminController.login);
+router.post("/admin", UserAdminController.login);
 
-export default router;
+module.exports = router;

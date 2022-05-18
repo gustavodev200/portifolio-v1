@@ -1,5 +1,5 @@
-import { getToken } from "./get-token";
 const jwt = require("jsonwebtoken");
+const { getToken } = require("./get-token");
 
 const checkToken = (req, res, next) => {
   if (!req.headers.authorization) {
@@ -21,4 +21,4 @@ const checkToken = (req, res, next) => {
   }
 };
 
-export { checkToken };
+module.exports = checkToken;

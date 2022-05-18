@@ -1,15 +1,10 @@
 import { Request, Response } from "express";
 import { AddProjects } from "../models/AddProjects";
+import { v2 as cloudinary } from "cloudinary";
 
-interface IAddProjects {
-  image: string[];
-  title: string;
-  tag: string;
-  description: string;
-}
 class ProjectController {
   async addProject(req: Request, res: Response) {
-    const { image, title, tag, description }: IAddProjects = req.body;
+    const { image, title, tag, description } = req.body;
 
     if (!image) {
       res.status(422).json({ message: "A Imagem é obrigatória!" });
@@ -33,9 +28,13 @@ class ProjectController {
       return;
     }
 
+    const cloudinaryUpload = cloudinary.uploader.upload(image, (err, res) => {
+      console.log(res, err);
+    });
+
     try {
       const newProject = await AddProjects.create({
-        image,
+        image: cloudinaryUpload,
         title,
         tag,
         description,
