@@ -43,16 +43,40 @@ class UserAdminController {
       .json({ message: "Administrador logado com sucesso!", user });
   }
 
-  // async create(req: Request, res: Response) {
-  //   const { name, email, password }: IUserAdmin = req.body;
-  //   const salt = await bcrypt.genSalt(12);
-  //   const passwordHash = await bcrypt.hash(password, salt);
-  //   const user = await UserAdmin.create({
-  //     email,
-  //     name,
-  //     password: passwordHash,
-  //   });
-  //   return res.status(201).json(user);
+  async create(req: Request, res: Response) {
+    const { name, email, password }: IUserAdmin = req.body;
+
+    const salt = await bcrypt.genSalt(12);
+    const passwordHash = await bcrypt.hash(password, salt);
+
+    try {
+      const user = await UserAdmin.create({
+        email,
+        name,
+        password: passwordHash,
+      });
+
+      return res.status(201).json(user);
+    } catch (error) {
+      res.status(500).json({ message: error });
+    }
+  }
+
+  // static async checkUser(req: Request, res: Response) {
+  //   let currentUser;
+
+  //   if (req.headers.authorization) {
+  //     const token = getToken(req);
+  //     const decoded = jwt.verify(token, process.env.SECRET);
+
+  //     currentUser = await UserAdmin.findOne(decoded.id);
+
+  //     currentUser.password = undefined;
+  //   } else {
+  //     currentUser = null;
+  //   }
+
+  //   res.status(200).send(currentUser);
   // }
 }
 

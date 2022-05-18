@@ -1,19 +1,20 @@
 ## create
 
-# GET http://localhost:3333/admin
-# Content-Type: application/json
-
-# {
-# 	"email": "gustavolage200@gmail.com",
-# 	"password": "06052001gl"
-# }
-
-POST  http://localhost:3333/admin/add-project
+POST http://localhost:3333/create
 Content-Type: application/json
 
 {
-  "image": "",
-	"title": "gustavolage200@gmail.com",
-	"tag": "#PESSOAL",
-  "description": "Projetin Fellas"
+	"email": "gustavolage200@gmail.com",
+  "name": "Gustavo Lage",
+	"password": "06052001gl"
 }
+
+# POST  http://localhost:3333/admin/add-project
+# Content-Type: application/json
+
+# {
+#   "image": "",
+# 	"title": "gustavolage200@gmail.com",
+# 	"tag": "#PESSOAL",
+#   "description": "Projetin Fellas"
+# }
