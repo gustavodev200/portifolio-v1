@@ -1,10 +1,13 @@
 import { Request, Response } from "express";
 import { AddProjects } from "../models/AddProjects";
 import { v2 as cloudinary } from "cloudinary";
+import upload from "../helpers/image-upload";
 
 class ProjectController {
   async addProject(req: Request, res: Response) {
     const { image, title, tag, description } = req.body;
+
+    const uploadImg = await cloudinary.uploader.upload(req.file.path);
 
     if (!image) {
       res.status(422).json({ message: "A Imagem é obrigatória!" });
