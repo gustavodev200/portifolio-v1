@@ -6,6 +6,9 @@ const fs = require("fs");
 class ProjectController {
   async addProject(req, res) {
     const { title, tag, description } = req.body;
+
+    let image = "";
+
     const imagesUrls: string[] = [];
 
     const uploader = (path) => cloudinary.uploads(path, "Images");
@@ -22,7 +25,9 @@ class ProjectController {
         fs.unlinkSync(path);
       }
 
-      return imagesUrls;
+      res
+        .status(200)
+        .json({ message: "Upload de imagens com sucesso!" }, imagesUrls);
     }
 
     if (!imagesUrls) {

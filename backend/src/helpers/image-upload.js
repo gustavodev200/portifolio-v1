@@ -2,7 +2,7 @@ const multer = require("multer");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "../assets/images");
+    cb(null, "src/uploads/images");
   },
 
   filename: (req, file, cb) => {
@@ -14,8 +14,8 @@ const fileFilter = (req, file, cb) => {
   if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
     cb(null, true);
   } else {
-    // cb({ message: "Formato de imagem inválido!" }, false);
-    console.log("Formato de imagem inválido!");
+    cb(null, false);
+    // console.log("Formato de imagem inválido!");
   }
 };
 
