@@ -1,15 +1,31 @@
-import { Request, Response } from "express";
 import { AddProjects } from "../models/AddProjects";
-import { v2 as cloudinary } from "cloudinary";
-import upload from "../helpers/image-upload";
+import cloudinary from "../helpers/cloudinary";
+// import upload from "../helpers/image-upload";
+const fs = require("fs");
 
 class ProjectController {
-  async addProject(req: Request, res: Response) {
-    const { image, title, tag, description } = req.body;
+  async addProject(req, res) {
+    const { title, tag, description } = req.body;
+    const imagesUrls: string[] = [];
 
-    const uploadImg = await cloudinary.uploader.upload(req.file.path);
+    const uploader = (path) => cloudinary.uploads(path, "Images");
 
-    if (!image) {
+    if (req.method === "POST") {
+      const files = req.files;
+
+      for (const file of files) {
+        const { path } = file;
+        const newPath = await uploader(path);
+
+        imagesUrls.push(newPath);
+
+        fs.unlinkSync(path);
+      }
+
+      return imagesUrls;
+    }
+
+    if (!imagesUrls) {
       res.status(422).json({ message: "A Imagem é obrigatória!" });
       return;
     }
@@ -31,13 +47,9 @@ class ProjectController {
       return;
     }
 
-    const cloudinaryUpload = cloudinary.uploader.upload(image, (err, res) => {
-      console.log(res, err);
-    });
-
     try {
       const newProject = await AddProjects.create({
-        image: cloudinaryUpload,
+        image: imagesUrls,
         title,
         tag,
         description,

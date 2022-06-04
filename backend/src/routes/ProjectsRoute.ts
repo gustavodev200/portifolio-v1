@@ -5,9 +5,9 @@ const upload = require("../helpers/image-upload");
 const router = express.Router();
 
 router.post(
-  "/admin/add-project",
+  "/admin/dashboard",
   verifyToken,
-  upload.single("project"),
+  upload.single("image"),
   ProjectController.addProject
 );
 

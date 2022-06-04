@@ -17,7 +17,7 @@ class UserAdminController {
       });
       await createUserToken(user, req, res);
 
-      res.status(201).json(user);
+      res.status(201).json({ user });
 
       return;
     } catch (error) {
