@@ -4,7 +4,7 @@ import { UserAdmin } from "./UserAdmin";
 
 const AddProjects = conn.define("AddProjects", {
   id: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4,
     primaryKey: true,
   },
