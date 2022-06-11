@@ -5,7 +5,8 @@ const fs = require("fs");
 
 class ProjectController {
   async addProject(req, res) {
-    const { image, title, tag, description } = req.body;
+    const { title, tag, description } = req.body;
+    const image = "";
 
     const uploader = (path) => cloudinary.uploads(path, "Images");
 
@@ -18,10 +19,12 @@ class ProjectController {
 
       imagesUrls.push(newPath);
 
+      console.log(imagesUrls);
+
       fs.unlinkSync(path);
     }
 
-    if (!imagesUrls) {
+    if (!image) {
       res.status(422).json({ message: "A Imagem é obrigatória!" });
       return;
     }
