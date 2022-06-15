@@ -5,7 +5,7 @@ const fs = require("fs");
 
 class ProjectController {
   async addProject(req: Request, res: Response) {
-    const { title, tag, description } = req.body;
+    const { title, tag, description, link } = req.body;
 
     const uploader = async (path) => await cloudinary.uploads(path, "Images");
 
@@ -54,6 +54,11 @@ class ProjectController {
       return;
     }
 
+    if (!link) {
+      res.status(422).json({ message: "O Link do projeto é obrigatório!" });
+      return;
+    }
+
     try {
       const newProject = await AddProjects.create(
         {
@@ -61,6 +66,7 @@ class ProjectController {
           title,
           tag,
           description,
+          link,
         },
         { raw: true }
       );

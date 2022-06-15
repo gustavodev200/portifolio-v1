@@ -11,13 +11,10 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (req, file, cb) => {
-  if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
-    cb(null, true);
-  } else {
-    // eslint-disable-next-line n/no-callback-literal
-    cb({ message: "Tipo de arquivo não suportado!" }, false);
-    // console.log("Formato de imagem inválido!");
+  if (!file.originalname.match(/\.(png|jpg)$/)) {
+    return cb(new Error("Por favor, envie apenas jpg ou png!"));
   }
+  cb(undefined, true);
 };
 
 const upload = multer({

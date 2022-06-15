@@ -25,6 +25,10 @@ const AddProjects = conn.define("AddProjects", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  link: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
 });
 
 UserAdmin.hasMany(AddProjects);
