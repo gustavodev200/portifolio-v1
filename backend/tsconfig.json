@@ -13,6 +13,11 @@
       "./node_modules/@types",
       "./src/@types"
     ],
-    "resolveJsonModule": true         
+    "lib": [
+      "es5", "es6", "dom", "dom.iterable"
+    ],
+    "resolveJsonModule": true   
+    
+    
 }
 }

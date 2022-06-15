@@ -7,7 +7,7 @@ const router = express.Router();
 router.post(
   "/admin/dashboard",
   verifyToken,
-  upload.array("image"),
+  upload.single("image"),
   ProjectController.addProject
 );
 

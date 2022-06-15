@@ -38,7 +38,7 @@ class UserAdminController {
       return;
     }
 
-    const user: any = await UserAdmin.findOne({ where: { email: email } });
+    const user: any = await UserAdmin.findOne({ where: { email } });
 
     if (!user) {
       res
