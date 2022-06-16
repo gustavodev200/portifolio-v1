@@ -1,13 +1,14 @@
 import { createGlobalStyle } from "styled-components";
+import { ThemeType } from "../utils/theme";
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
   body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: teal;
-    /* font-family: Open-Sans, Helvetica, Sans-Serif; */
+    font-family: 'Open Sans', sans-serif;
+    background-color: ${(theme) => theme.theme.colors.bg}
   }
 `;
 
-module.exports = GlobalStyle;
+export default GlobalStyle;
