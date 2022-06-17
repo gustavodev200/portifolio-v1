@@ -29,8 +29,3 @@ export const NavLogo = styled.div`
     font-size: ${pixelToRem(15)};
   }
 `;
-
-export const NavMenu = styled.div`
-  display: flex;
-  align-items: center;
-`;

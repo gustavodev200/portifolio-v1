@@ -7,12 +7,14 @@ fontSizes.displayExtraLarge = fontSizes[5];
 
 const bg = "#141519";
 const primary = "#ffff";
+const blue = "3888FF";
 
 const theme = {
   fontSizes,
   colors: {
     bg,
     primary,
+    blue,
   },
 };
 

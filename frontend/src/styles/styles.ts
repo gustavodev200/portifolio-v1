@@ -31,4 +31,10 @@ export const Container = styled.div<FlexContainerProps>`
     align-items: center;
     justify-content: center;
   }
+
+  @media ${device.laptopL} {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: ${pixelToRem(30)};
+  }
 `;
