@@ -1,13 +1,20 @@
-import GlobalStyle from "./styles/globalStyles";
-import { Theme } from "./utils/theme";
-import AllRoutes from "../src/routes";
+import Navbar from "./components/layout/Navbar";
+import About from "./pages/About";
 import Home from "./pages/Home";
+import GlobalStyle from "./styles/globalStyles";
+import { Container } from "./styles/styles";
+import pixelToRem from "./utils/pxToRem";
+import { Theme } from "./utils/theme";
 
 const App = () => {
   return (
     <Theme>
-      <GlobalStyle />
-      <AllRoutes />
+      <Container flex="column" margin={pixelToRem(24, 112, 50)}>
+        <GlobalStyle />
+        <Navbar />
+        <Home />
+        <About />
+      </Container>
     </Theme>
   );
 };
