@@ -5,7 +5,7 @@ import MenuMobile from "../../MenuMobile";
 import MenuDesktop from "../../MenuDesktop";
 
 const Navbar = () => {
-  const [menuIsVisible, setMenuIsVisible] = useState<boolean>(true);
+  const [menuIsVisible, setMenuIsVisible] = useState<boolean>(false);
 
   return (
     <NavbarWrapper>
@@ -13,7 +13,7 @@ const Navbar = () => {
         <img src={logo} alt="Logo page" />
         <h1>GUSTAVO L.</h1>
       </NavLogo>
-      <MenuDesktop />
+      <MenuDesktop setMenuIsVisible={setMenuIsVisible} />
       <MenuMobile
         menuIsVisible={menuIsVisible}
         setMenuIsVisible={setMenuIsVisible}

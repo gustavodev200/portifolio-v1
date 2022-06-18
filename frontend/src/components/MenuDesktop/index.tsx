@@ -1,23 +1,39 @@
+import { BiMenu } from "react-icons/bi";
+import { Dispatch, SetStateAction } from "react";
+import { NavMenuMobile } from "../MenuMobile/styles";
 import { NavMenuDesktop } from "./styles";
 
-const MenuDesktop = () => {
+interface IMenuProps {
+  setMenuIsVisible: Dispatch<SetStateAction<boolean>>;
+}
+
+const MenuDesktop: React.FC<IMenuProps> = ({ setMenuIsVisible }) => {
   return (
-    <NavMenuDesktop>
-      <ul>
-        <li>
-          <a href="#">HOME</a>
-        </li>
-        <li>
-          <a href="#">SOBRE</a>
-        </li>
-        <li>
-          <a href="#">PROJETOS</a>
-        </li>
-        <li>
-          <a href="#">CONTATOS</a>
-        </li>
-      </ul>
-    </NavMenuDesktop>
+    <>
+      <NavMenuDesktop>
+        <ul>
+          <li>
+            <a href="#">HOME</a>
+          </li>
+          <li>
+            <a href="#">SOBRE</a>
+          </li>
+          <li>
+            <a href="#">PROJETOS</a>
+          </li>
+          <li>
+            <a href="#">CONTATOS</a>
+          </li>
+        </ul>
+      </NavMenuDesktop>
+      <NavMenuMobile>
+        <BiMenu
+          fontSize={60}
+          color="#fff"
+          onClick={() => setMenuIsVisible(true)}
+        />
+      </NavMenuMobile>
+    </>
   );
 };
 
