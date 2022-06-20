@@ -1,4 +1,4 @@
-import { HomeWrapper, TitleHome } from "./styles";
+import { HomeWrapper, MyPhotoBG, TitleHome } from "./styles";
 import completed_circle from "../../assets/images/completed_circle.svg";
 import mid_circle from "../../assets/images/mid_circle.svg";
 import home_img from "../../assets/images/home_img.svg";
@@ -16,11 +16,11 @@ const Home = () => {
           <span>FULLSTACK</span>
         </h2>
       </TitleHome>
-      <div>
+      <MyPhotoBG>
         <img src={completed_circle} alt="Homepage" />
         <img src={mid_circle} alt="Homepage" />
         <img src={home_img} alt="Homepage" />
-      </div>
+      </MyPhotoBG>
       <div>
         <span>#HTML, CSS, JAVASCRIPT, FIGMA</span>
         <span>#SASS, STYLED-COMPONENTS</span>
