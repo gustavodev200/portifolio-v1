@@ -21,10 +21,10 @@ const MenuMobile: React.FC<IMenuProps> = ({
       <nav>
         <ul>
           <li>
-            <a href="#">HOME</a>
+            <a href="home">HOME</a>
           </li>
           <li>
-            <a href="#">SOBRE</a>
+            <a href="about">SOBRE</a>
           </li>
           <li>
             <a href="#">PROJETOS</a>

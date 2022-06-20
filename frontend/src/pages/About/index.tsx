@@ -1,7 +1,7 @@
 import { AboutWrapper } from "./styles";
 
 const About = () => {
-  return <AboutWrapper>About</AboutWrapper>;
+  return <AboutWrapper className="about">About</AboutWrapper>;
 };
 
 export default About;
