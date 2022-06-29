@@ -1,4 +1,11 @@
-import { HomeWrapper, MyPhotoBG, TitleHome } from "./styles";
+import {
+  ButtonDownloadCV,
+  HomeWrapper,
+  MyPhotoBG,
+  TitleHome,
+  WrapperSocialMedia,
+  WrapperTags,
+} from "./styles";
 import completed_circle from "../../assets/images/completed_circle.svg";
 import mid_circle from "../../assets/images/mid_circle.svg";
 import home_img from "../../assets/images/home_img.svg";
@@ -16,18 +23,25 @@ const Home = () => {
           <span>FULLSTACK</span>
         </h2>
       </TitleHome>
+
       <MyPhotoBG>
         <img src={completed_circle} alt="Homepage" />
         <img src={mid_circle} alt="Homepage" />
         <img src={home_img} alt="Homepage" />
       </MyPhotoBG>
-      <div>
+
+      <ButtonDownloadCV>
+        <a href="#">DOWNLOAD CV</a>
+      </ButtonDownloadCV>
+
+      <WrapperTags>
         <span>#HTML, CSS, JAVASCRIPT, FIGMA</span>
         <span>#SASS, STYLED-COMPONENTS</span>
         <span>#GIT, GITHUB, API REST</span>
         <span>#REACT JS</span>
-      </div>
-      <div>
+      </WrapperTags>
+
+      <WrapperSocialMedia>
         <a href="#">
           <img src={linkedin} alt="Ir para Linkedin" />
         </a>
@@ -37,7 +51,7 @@ const Home = () => {
         <a href="#">
           <img src={insta} alt="Ir para Instagran" />
         </a>
-      </div>
+      </WrapperSocialMedia>
     </HomeWrapper>
   );
 };

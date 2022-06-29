@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../styles/responsive";
 import pixelToRem from "../../utils/pxToRem";
 
 export const HomeWrapper = styled.section`
@@ -58,5 +59,74 @@ export const MyPhotoBG = styled.div`
   img:nth-child(3) {
     z-index: 0;
     width: ${pixelToRem(250)};
+  }
+
+  /* @media ${device.tablet} {
+    img:nth-child(1) {
+      width: ${pixelToRem(400)};
+    }
+
+    img:nth-child(2) {
+      width: ${pixelToRem(200)};
+      position: relative;
+      margin-left: ${pixelToRem(200)};
+    }
+
+    img:nth-child(3) {
+      width: ${pixelToRem(300)};
+    }
+  } */
+`;
+
+export const ButtonDownloadCV = styled.div`
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    position: absolute;
+    z-index: 1;
+    background-color: #3888ff;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    top: -5rem;
+    color: #fff;
+    font-weight: bold;
+  }
+`;
+
+export const WrapperTags = styled.div`
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top: ${pixelToRem(-45)};
+
+  span {
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    opacity: 0.5;
+  }
+`;
+
+export const WrapperSocialMedia = styled.div`
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: ${pixelToRem(-100)};
+
+  a {
+    padding: 0 1rem;
+    cursor: pointer;
+    &:hover {
+      color: black;
+    }
   }
 `;
