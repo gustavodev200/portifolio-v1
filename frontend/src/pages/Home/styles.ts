@@ -19,6 +19,8 @@ export const TitleHome = styled.div`
   font-size: ${pixelToRem(30)};
 
   h2 {
+    display: flex;
+    flex-direction: column;
     span {
       font-size: ${pixelToRem(60)};
     }
@@ -26,13 +28,28 @@ export const TitleHome = styled.div`
       color: transparent;
       -webkit-text-stroke: 1px #fff;
       font-size: ${pixelToRem(40)};
+      margin-top: -20px;
+    }
+  }
+  @media ${device.tablet} {
+    position: relative;
+    top: ${pixelToRem(90)};
+
+    h2 {
+      span {
+        font-size: ${pixelToRem(80)};
+      }
+      span:nth-child(n + 2) {
+        margin-left: 3px;
+        font-size: ${pixelToRem(50)};
+      }
     }
   }
 `;
 
 export const MyPhotoBG = styled.div`
   z-index: 0;
-  margin-top: ${pixelToRem(-150)};
+  margin-top: ${pixelToRem(-100)};
   width: 100%;
   display: flex;
   align-items: center;
@@ -61,21 +78,23 @@ export const MyPhotoBG = styled.div`
     width: ${pixelToRem(250)};
   }
 
-  /* @media ${device.tablet} {
+  @media ${device.tablet} {
+    position: relative;
+    top: ${pixelToRem(-50)};
     img:nth-child(1) {
-      width: ${pixelToRem(400)};
+      width: ${pixelToRem(450)};
     }
 
     img:nth-child(2) {
-      width: ${pixelToRem(200)};
+      width: ${pixelToRem(225)};
       position: relative;
-      margin-left: ${pixelToRem(200)};
+      margin-left: ${pixelToRem(230)};
     }
 
     img:nth-child(3) {
-      width: ${pixelToRem(300)};
+      width: ${pixelToRem(360)};
     }
-  } */
+  }
 `;
 
 export const ButtonDownloadCV = styled.div`
@@ -95,6 +114,13 @@ export const ButtonDownloadCV = styled.div`
     color: #fff;
     font-weight: bold;
   }
+
+  @media ${device.tablet} {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    top: ${pixelToRem(-100)};
+  }
 `;
 
 export const WrapperTags = styled.div`
@@ -108,9 +134,16 @@ export const WrapperTags = styled.div`
 
   span {
     color: #fff;
-    width: 100%;
     text-align: center;
     opacity: 0.5;
+  }
+
+  @media ${device.tablet} {
+    width: 100%;
+    display: flex;
+    align-items: end;
+    top: ${pixelToRem(-330)};
+    right: ${pixelToRem(20)};
   }
 `;
 
@@ -128,5 +161,9 @@ export const WrapperSocialMedia = styled.div`
     &:hover {
       color: black;
     }
+  }
+
+  @media ${device.tablet} {
+    top: ${pixelToRem(-130)};
   }
 `;

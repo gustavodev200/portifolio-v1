@@ -19,7 +19,6 @@ const Home = () => {
       <TitleHome>
         <h2>
           <span>GUSTAVO</span>
-          <br />
           <span>FULLSTACK</span>
         </h2>
       </TitleHome>
