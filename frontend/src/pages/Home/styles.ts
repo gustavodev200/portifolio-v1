@@ -45,6 +45,18 @@ export const TitleHome = styled.div`
       }
     }
   }
+
+  @media ${device.laptopL} {
+    h2 {
+      span {
+        font-size: ${pixelToRem(110)};
+      }
+      span:nth-child(n + 2) {
+        margin-left: 3px;
+        font-size: ${pixelToRem(70)};
+      }
+    }
+  }
 `;
 
 export const MyPhotoBG = styled.div`
@@ -113,6 +125,13 @@ export const ButtonDownloadCV = styled.div`
     top: -5rem;
     color: #fff;
     font-weight: bold;
+    transition: 0.5s all ease;
+
+    &:hover {
+      background-color: #2911ff;
+      transform: translate(0, -40%);
+      box-shadow: 0 0 60px 0 rgba(0, 0, 200, 0.5);
+    }
   }
 
   @media ${device.tablet} {
@@ -120,6 +139,10 @@ export const ButtonDownloadCV = styled.div`
     display: flex;
     justify-content: start;
     top: ${pixelToRem(-100)};
+  }
+
+  @media ${device.laptopL} {
+    top: ${pixelToRem(-150)};
   }
 `;
 
@@ -145,6 +168,10 @@ export const WrapperTags = styled.div`
     top: ${pixelToRem(-330)};
     right: ${pixelToRem(20)};
   }
+
+  @media ${device.laptopL} {
+    top: ${pixelToRem(-450)};
+  }
 `;
 
 export const WrapperSocialMedia = styled.div`
@@ -158,12 +185,18 @@ export const WrapperSocialMedia = styled.div`
   a {
     padding: 0 1rem;
     cursor: pointer;
+    transition: 0.5s all ease;
+
     &:hover {
-      color: black;
+      transform: translate(0, -20%);
     }
   }
 
   @media ${device.tablet} {
     top: ${pixelToRem(-130)};
+  }
+
+  @media ${device.laptopL} {
+    top: ${pixelToRem(-200)};
   }
 `;
