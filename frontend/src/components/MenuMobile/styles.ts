@@ -32,11 +32,16 @@ export const ContainerMenu = styled.section<Props>`
 
   opacity: 0;
   pointer-events: none;
+  transform: translateY(50px);
+
+  transition: 0.5s;
 
   > svg {
     position: absolute;
     top: 1.5rem;
     right: 1.4rem;
+    transform: rotate(45deg);
+    transition: 0.7s;
   }
 
   nav {
@@ -58,9 +63,15 @@ export const ContainerMenu = styled.section<Props>`
         font-size: ${pixelToRem(20)};
         color: #fff;
         font-weight: bold;
-        transition: 0.2s ease-in-out;
+        transition: color 0.2s;
+
         &:hover {
           color: #3888ff;
+        }
+
+        &:focus {
+          color: #3888ff;
+          border-bottom: 2px solid #3888ff;
         }
       }
     }
@@ -71,5 +82,10 @@ export const ContainerMenu = styled.section<Props>`
     css`
       opacity: 1;
       pointer-events: auto;
+      transform: translateY(0px);
+
+      > svg {
+        transform: rotate(0deg);
+      }
     `};
 `;

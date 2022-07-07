@@ -21,9 +21,15 @@ export const NavMenuDesktop = styled.div`
     a {
       color: #fff;
       font-weight: bold;
-      transition: 0.3s ease-in-out;
+      transition: color 0.2s;
+      position: relative;
       &:hover {
         color: #3888ff;
+      }
+
+      &:focus {
+        color: #3888ff;
+        border-bottom: 2px solid #3888ff;
       }
     }
   }

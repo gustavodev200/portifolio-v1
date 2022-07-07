@@ -13,10 +13,10 @@ const MenuDesktop: React.FC<IMenuProps> = ({ setMenuIsVisible }) => {
       <NavMenuDesktop>
         <ul>
           <li>
-            <a href="#">HOME</a>
+            <a href="/">HOME</a>
           </li>
           <li>
-            <a href="#">SOBRE</a>
+            <a href="#about">SOBRE</a>
           </li>
           <li>
             <a href="#">PROJETOS</a>

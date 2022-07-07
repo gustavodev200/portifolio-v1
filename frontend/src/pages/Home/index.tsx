@@ -15,7 +15,7 @@ import insta from "../../assets/images/insta.svg";
 
 const Home = () => {
   return (
-    <HomeWrapper className="home">
+    <HomeWrapper id="home">
       <TitleHome>
         <h2>
           <span>GUSTAVO</span>

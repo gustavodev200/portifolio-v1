@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
-    background-color: ${(theme) => theme.theme.colors.bg}
+    background-color: ${(theme) => theme.theme.colors.bg};
   }
 
   h1, h2, h3, h4, h5, h6 {

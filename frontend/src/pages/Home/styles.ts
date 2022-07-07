@@ -125,7 +125,7 @@ export const ButtonDownloadCV = styled.div`
     top: -5rem;
     color: #fff;
     font-weight: bold;
-    transition: 0.5s all ease;
+    transition: 1s all ease;
 
     &:hover {
       background-color: #2911ff;
@@ -180,7 +180,7 @@ export const WrapperSocialMedia = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  top: ${pixelToRem(-100)};
+  top: ${pixelToRem(-40)};
 
   a {
     padding: 0 1rem;
