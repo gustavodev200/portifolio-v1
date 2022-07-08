@@ -19,7 +19,7 @@ const Home = () => {
       <TitleHome>
         <h2>
           <span>GUSTAVO</span>
-          <span>FULLSTACK</span>
+          <span>FRONTEND</span>
         </h2>
       </TitleHome>
 

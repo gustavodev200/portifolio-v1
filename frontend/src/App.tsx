@@ -1,6 +1,7 @@
 import Navbar from "./components/layout/Navbar";
 import About from "./pages/About";
 import Home from "./pages/Home";
+import Projects from "./pages/Projects";
 import GlobalStyle from "./styles/globalStyles";
 import { Container } from "./styles/styles";
 import pixelToRem from "./utils/pxToRem";
@@ -14,6 +15,7 @@ const App = () => {
         <Navbar />
         <Home />
         <About />
+        <Projects />
       </Container>
     </Theme>
   );

@@ -18,6 +18,7 @@ export const NavLogo = styled.div`
   border: 3.5px solid rgba(196, 196, 196, 0.5);
   border-radius: 50px;
   padding: 5px 0;
+  cursor: pointer;
 
   img {
     width: 30%;
