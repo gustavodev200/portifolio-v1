@@ -14,6 +14,7 @@ const Projects = () => {
         <Cards />
         <Cards />
         <Cards />
+        <Cards />
       </CardsWrapper>
     </ProjectWrapper>
   );

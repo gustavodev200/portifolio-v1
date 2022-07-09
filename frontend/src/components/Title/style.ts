@@ -6,6 +6,7 @@ export const TitleWrapper = styled.header`
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-top: ${pixelToRem(50)};
 
   h2 {
     display: flex;
