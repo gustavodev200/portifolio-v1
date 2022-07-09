@@ -1,7 +1,9 @@
+import Title from "../../components/Title";
+
 const Contact = () => {
   return (
     <section>
-      <h1>Contact</h1>
+      <Title firstText="CONTATO" secondText="GUSTAVO" />
     </section>
   );
 };

@@ -1,16 +1,12 @@
-import { AboutWrapper, ImgAbout, MainAbout, TitleAbout } from "./styles";
+import { AboutWrapper, ImgAbout, MainAbout } from "./styles";
 import about_img from "../../assets/images/about_img.svg";
+import Title from "../../components/Title";
 
 const About = () => {
   return (
     <AboutWrapper id="about">
       <MainAbout>
-        <TitleAbout>
-          <h2>
-            <span>SOBRE</span>
-            <span>GUSTAVO</span>
-          </h2>
-        </TitleAbout>
+        <Title firstText="SOBRE" secondText="GUSTAVO" />
         <p>
           Biografia e use como inspiração e não como comparação. Você é peça
           única! 5 Acredite. Se você é ateu, acredite no seu poder de realizar.
