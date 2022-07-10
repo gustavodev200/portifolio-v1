@@ -41,13 +41,13 @@ const Home = () => {
       </WrapperTags>
 
       <WrapperSocialMedia>
-        <a href="#">
+        <a href="https://www.linkedin.com/in/gustavo-lage/" target="_blank">
           <img src={linkedin} alt="Ir para Linkedin" />
         </a>
-        <a href="#">
+        <a href="https://discord.gg/ZeYTJzPFUd" target="_blank">
           <img src={dsc} alt="Ir para Discord" />
         </a>
-        <a href="#">
+        <a href="https://www.instagram.com/gustavo_lage01/" target="_blank">
           <img src={insta} alt="Ir para Instagran" />
         </a>
       </WrapperSocialMedia>

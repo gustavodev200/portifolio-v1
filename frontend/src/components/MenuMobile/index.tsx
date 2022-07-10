@@ -30,7 +30,7 @@ const MenuMobile: React.FC<IMenuProps> = ({
             <a href="#projects">PROJETOS</a>
           </li>
           <li>
-            <a href="#">CONTATOS</a>
+            <a href="#contact">CONTATOS</a>
           </li>
         </ul>
       </nav>

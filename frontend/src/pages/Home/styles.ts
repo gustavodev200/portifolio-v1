@@ -196,7 +196,15 @@ export const WrapperSocialMedia = styled.div`
     top: ${pixelToRem(-130)};
   }
 
+  @media ${device.laptop} {
+    a {
+      img {
+        width: ${pixelToRem(40)};
+      }
+    }
+  }
+
   @media ${device.laptopL} {
-    top: ${pixelToRem(-200)};
+    top: ${pixelToRem(-150)};
   }
 `;

@@ -22,7 +22,7 @@ const MenuDesktop: React.FC<IMenuProps> = ({ setMenuIsVisible }) => {
             <a href="#projects">PROJETOS</a>
           </li>
           <li>
-            <a href="#">CONTATOS</a>
+            <a href="#contact">CONTATOS</a>
           </li>
         </ul>
       </NavMenuDesktop>

@@ -3,6 +3,7 @@ import { device } from "../../styles/responsive";
 import pixelToRem from "../../utils/pxToRem";
 
 export const AboutWrapper = styled.section`
+  position: relative;
   width: 100%;
   height: auto;
 
@@ -55,10 +56,10 @@ export const MainAbout = styled.main`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
   flex-direction: column;
 
   p {
+    margin-top: 15%;
     color: #fff;
   }
 
@@ -66,8 +67,7 @@ export const MainAbout = styled.main`
     height: 100vh;
 
     p {
-      font-size: ${pixelToRem(20)};
-      color: #fff;
+      font-size: ${pixelToRem(15)};
     }
 
     img {
@@ -77,6 +77,10 @@ export const MainAbout = styled.main`
 
   @media ${device.laptopL} {
     display: flex;
+
+    p {
+      font-size: ${pixelToRem(20)};
+    }
 
     img {
       width: 60%;
@@ -102,5 +106,19 @@ export const ImgAbout = styled.div`
     img {
       width: 80%;
     }
+  }
+`;
+
+export const TechsStyles = styled.div`
+  display: none;
+  position: absolute;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  bottom: 0;
+  left: 0;
+
+  @media ${device.laptopL} {
+    display: flex;
   }
 `;

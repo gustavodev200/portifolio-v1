@@ -1,6 +1,7 @@
 import Navbar from "./components/layout/Navbar";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Footer from "./pages/Footer";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import GlobalStyle from "./styles/globalStyles";
@@ -19,6 +20,7 @@ const App = () => {
         <Projects />
         <Contact />
       </Container>
+      <Footer />
     </Theme>
   );
 };
