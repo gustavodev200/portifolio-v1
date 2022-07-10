@@ -19,11 +19,15 @@ const Cards = () => {
   return (
     <CardWrapper>
       <CardContent image={bingo}>
-        {/* <img src={bingo} alt="#" /> */}
         <CardDetails>
           <CardTitle>
             <h4>PROJETO - COLLAB BINGO(OPEN SOURCE)</h4>
           </CardTitle>
+          <span>
+            Projeto feito com alguns amigos encontrado na comunidade de
+            programação Rocketseat. Projeto feito com alguns amigos encontrado
+            na comunidade de programação.
+          </span>
           <CardButton>
             <LinkProject href="#">
               <AiOutlineLink fontSize={20} />
