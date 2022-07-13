@@ -8,7 +8,7 @@ type ButtonProps = {
 const ButtonSubmit: React.FC<ButtonProps> = ({ type, text }) => {
   return (
     <ButtonContainer>
-      <ButtonWrapper type={type} value={text} />;
+      <ButtonWrapper type={type} value={text} />
     </ButtonContainer>
   );
 };
