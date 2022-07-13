@@ -12,6 +12,7 @@ export const TextAreaWrapper = styled.textarea`
   font-size: ${pixelToRem(16)};
   font-weight: bold;
   font-family: "Open Sans", sans-serif;
+  resize: none;
 
   &::placeholder {
     color: #c4c4c4;
