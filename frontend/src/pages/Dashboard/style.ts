@@ -32,10 +32,19 @@ export const NavBarDashboard = styled.div`
   display: flex;
 
   @media ${device.laptop} {
+    display: flex;
+    justify-content: start;
     width: 20%;
+    height: 100vh;
   }
 `;
-export const Profile = styled.div``;
+
+export const Profile = styled.div`
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin-top: ${pixelToRem(30)};
+`;
 export const NavgationDash = styled.nav``;
 
 export const MainDashboard = styled.main`

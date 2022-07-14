@@ -1,6 +1,7 @@
 import { BiMenu } from "react-icons/bi";
 import InputFile from "../../components/Form/InputFile";
 import { useForm } from "react-hook-form";
+import logo from "../../assets/images/logo.svg";
 
 import {
   ButtonStyles,
@@ -16,6 +17,7 @@ import {
 import Input from "../../components/Form/Input";
 import TextArea from "../../components/Form/TextArea";
 import ButtonSubmit from "../../components/Form/ButtonSubmit";
+import { NavLogo } from "../../components/layout/Navbar/styles";
 
 const Dashboard = () => {
   const { register, handleSubmit } = useForm();
@@ -28,7 +30,12 @@ const Dashboard = () => {
         <BiMenu color="#fff" fontSize={50} />
       </MenuMobileDash>
       <NavBarDashboard>
-        <Profile></Profile>
+        <Profile>
+          <NavLogo>
+            <img src={logo} alt="Logo page" />
+            <h1>GUSTAVO L.</h1>
+          </NavLogo>
+        </Profile>
         <NavgationDash></NavgationDash>
       </NavBarDashboard>
 
