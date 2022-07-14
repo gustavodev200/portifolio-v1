@@ -1,6 +1,8 @@
 import { FieldValues, UseFormRegister } from "react-hook-form";
 import styled from "styled-components";
 import bingo_teste from "../../../assets/images/bingo.png";
+import { device } from "../../../styles/responsive";
+import pixelToRem from "../../../utils/pxToRem";
 
 type InputProps = {
   type: string;
@@ -33,7 +35,9 @@ const InputFile: React.FC<InputProps> = ({
   );
 };
 
-const InputContainer = styled.div``;
+const InputContainer = styled.div`
+  width: 100%;
+`;
 const ImagemSelected = styled.label`
   width: 100%;
   display: flex;
@@ -46,6 +50,7 @@ const ImagemSelected = styled.label`
   }
 
   img {
+    cursor: pointer;
     width: 100%;
     border-radius: 10px;
 
@@ -54,6 +59,29 @@ const ImagemSelected = styled.label`
       span {
         display: block;
       }
+    }
+  }
+
+  @media ${device.laptop} {
+    justify-content: flex-start;
+    img {
+      width: 30%;
+    }
+
+    span {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      background-color: #10131a;
+      margin-top: ${pixelToRem(40)};
+      margin-left: ${pixelToRem(30)};
+      width: 30%;
+      padding: 10px;
+      border-radius: 5px;
+      height: 100%;
+      color: #fff;
+      font-weight: bold;
+      font-size: ${pixelToRem(15)};
     }
   }
 `;

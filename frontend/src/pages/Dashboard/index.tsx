@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import {
   ButtonStyles,
   DashboardWrapper,
+  FormDashboard,
   MainDashboard,
   MenuMobileDash,
   NavBarDashboard,
@@ -35,7 +36,7 @@ const Dashboard = () => {
         <TitleDash>
           <h4>ADICIONAR NOVO PROJETO</h4>
         </TitleDash>
-        <form onSubmit={onSubmit}>
+        <FormDashboard onSubmit={onSubmit}>
           <InputFile
             type="file"
             name="file"
@@ -64,7 +65,7 @@ const Dashboard = () => {
           <ButtonStyles>
             <ButtonSubmit type="submit" text="ADICIONAR" />
           </ButtonStyles>
-        </form>
+        </FormDashboard>
       </MainDashboard>
     </DashboardWrapper>
   );

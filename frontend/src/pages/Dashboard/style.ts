@@ -8,6 +8,10 @@ export const DashboardWrapper = styled.section`
   flex-direction: column;
   width: 100%;
   height: 100vh;
+
+  @media ${device.laptop} {
+    flex-direction: row;
+  }
 `;
 
 export const MenuMobileDash = styled.nav`
@@ -27,7 +31,7 @@ export const MenuMobileDash = styled.nav`
 export const NavBarDashboard = styled.div`
   display: flex;
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     width: 20%;
   }
 `;
@@ -37,10 +41,14 @@ export const NavgationDash = styled.nav``;
 export const MainDashboard = styled.main`
   width: 80%;
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     height: 100vh;
-    background-color: #fff;
+    background-color: #373737;
   }
 `;
 
@@ -52,6 +60,35 @@ export const TitleDash = styled.div`
   h4 {
     font-size: ${pixelToRem(17)};
   }
+
+  @media ${device.laptop} {
+    margin-top: ${pixelToRem(10)};
+    width: 80%;
+    justify-content: start;
+    h4 {
+      font-size: ${pixelToRem(30)};
+    }
+  }
+`;
+
+export const FormDashboard = styled.form`
+  width: 100%;
+
+  @media ${device.laptop} {
+    width: 80%;
+    input[type="text"] {
+      height: ${pixelToRem(40)};
+    }
+
+    input[type="submit"] {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    textarea {
+      height: ${pixelToRem(130)};
+    }
+  }
 `;
 
 export const ButtonStyles = styled.div`
@@ -62,5 +99,11 @@ export const ButtonStyles = styled.div`
   input {
     width: 100%;
     justify-content: center;
+  }
+
+  @media ${device.laptop} {
+    input {
+      width: 20%;
+    }
   }
 `;
