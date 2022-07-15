@@ -1,6 +1,6 @@
 import Input from "../../components/Form/Input";
 import GlobalStyle from "../../styles/globalStyles";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { Container } from "../../styles/styles";
 import pixelToRem from "../../utils/pxToRem";
 import {
@@ -11,13 +11,19 @@ import {
   AdminPageWrapper,
 } from "./style";
 import ButtonSubmit from "../../components/Form/ButtonSubmit";
-
 import page_admin from "../../assets/images/page_admin.svg";
+import { useEffect } from "react";
+import useAuth from "../../utils/authUser";
 
 const AdminPage = () => {
   const { register, handleSubmit } = useForm();
+  const { login } = useAuth();
 
-  const onSubmit = handleSubmit((data) => console.log(data));
+  // useEffect(() => {
+  //   loginAdmin(user);
+  // }, [loginAdmin]);
+
+  const onSubmit = handleSubmit((user) => login(user));
 
   return (
     <>
