@@ -1,45 +1,62 @@
-import { useState } from "react";
-import { FieldValues } from "react-hook-form";
+import { useEffect, useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 import api from "./api";
 
-type User = {
-  email: string;
-  password: string;
-};
+// type User = {
+//   email: string;
+//   password: string;
+// };
 
-type TypeForm = {
-  data: User;
-  token: string;
-};
+// type TypeForm = {
+//   token: string;
+// };
 
 export default function useAuth() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   const [authenticated, setAuthenticated] = useState(false);
   const navigate = useNavigate();
 
-  async function login(user: User) {
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      setAuthenticated(true);
+      api.defaults.headers.common["Authorization"] = `Bearer ${JSON.parse(
+        token
+      )}`;
+      navigate("/admin/dashboard");
+    }
+  }, []);
+
+  async function login(user: any) {
     try {
       const { data, status } = await api.post("/admin", user);
 
       if (status === 200) {
-        console.log(data);
         await authUser(data);
       } else {
         throw new Error(data.message);
       }
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      // new Error(err);
     }
   }
 
-  async function authUser(data: TypeForm) {
+  async function authUser(data: any) {
     setAuthenticated(true);
     localStorage.setItem("token", JSON.stringify(data.token));
     setToken(JSON.stringify(data.token));
     api.defaults.headers.common["Authorization"] = `Bearer ${data.token}`;
-    navigate("/");
+    navigate("dashboard");
   }
 
-  return { authenticated, login, token };
+  async function projectsAdd(newproject: any) {
+    await api
+      .post("admin/dashboard", newproject)
+      .then((response) => console.log(response.data))
+      .catch((error) => console.log(error));
+  }
+
+  return { authenticated, login, token, projectsAdd };
 }

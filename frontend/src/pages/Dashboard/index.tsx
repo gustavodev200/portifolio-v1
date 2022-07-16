@@ -1,6 +1,6 @@
 import { BiMenu } from "react-icons/bi";
 import InputFile from "../../components/Form/InputFile";
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
 import logo from "../../assets/images/logo.svg";
 
 import {
@@ -18,11 +18,18 @@ import Input from "../../components/Form/Input";
 import TextArea from "../../components/Form/TextArea";
 import ButtonSubmit from "../../components/Form/ButtonSubmit";
 import { NavLogo } from "../../components/layout/Navbar/styles";
+import useAuth from "../../utils/authUser";
 
 const Dashboard = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<FieldValues>();
+  const { projectsAdd } = useAuth();
 
-  const onSubmit = handleSubmit((data) => console.log(data));
+  // const onSubmit = handleSubmit((data) => projectsAdd(data));
+  const onSubmit = handleSubmit((data) => {
+    const dataObj = data.image[0].name;
+    data.image = dataObj;
+    projectsAdd(data);
+  });
 
   return (
     <DashboardWrapper>
@@ -46,7 +53,7 @@ const Dashboard = () => {
         <FormDashboard onSubmit={onSubmit}>
           <InputFile
             type="file"
-            name="file"
+            name="image"
             placeholder="Esolha um arquivo"
             register={register}
           />
@@ -60,6 +67,13 @@ const Dashboard = () => {
             type="text"
             name="tag"
             placeholder="DIGITE A TAG"
+            register={register}
+          />
+
+          <Input
+            type="text"
+            name="link"
+            placeholder="LINK DO SITE AQUI..."
             register={register}
           />
 

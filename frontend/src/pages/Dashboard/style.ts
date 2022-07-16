@@ -44,6 +44,16 @@ export const Profile = styled.div`
   display: flex;
   justify-content: center;
   margin-top: ${pixelToRem(30)};
+
+  > div {
+    display: none;
+  }
+
+  @media ${device.laptop} {
+    > div {
+      display: flex;
+    }
+  }
 `;
 export const NavgationDash = styled.nav``;
 

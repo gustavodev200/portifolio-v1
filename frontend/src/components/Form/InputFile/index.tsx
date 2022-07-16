@@ -42,7 +42,7 @@ const ImagemSelected = styled.label`
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 10px;
 
   span {
     width: 100%;
@@ -65,7 +65,7 @@ const ImagemSelected = styled.label`
   @media ${device.laptop} {
     justify-content: flex-start;
     img {
-      width: 30%;
+      width: 20%;
     }
 
     span {

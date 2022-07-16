@@ -14,9 +14,10 @@ import ButtonSubmit from "../../components/Form/ButtonSubmit";
 import page_admin from "../../assets/images/page_admin.svg";
 import { useEffect } from "react";
 import useAuth from "../../utils/authUser";
+import { FieldValues } from "react-hook-form";
 
 const AdminPage = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<FieldValues>();
   const { login } = useAuth();
 
   // useEffect(() => {

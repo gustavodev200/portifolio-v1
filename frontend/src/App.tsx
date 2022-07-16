@@ -12,7 +12,7 @@ const App = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="admin" element={<AdminPage />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="admin/dashboard" element={<Dashboard />} />
       </Routes>
       <GlobalStyle />
     </BrowserRouter>
