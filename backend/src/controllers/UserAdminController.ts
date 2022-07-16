@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-expressions */
 import { Request, Response } from "express";
 import { UserAdmin } from "../models/UserAdmin";
 import bcrypt from "bcrypt";
 import { createUserToken } from "../helpers/create-user-token";
+
 class UserAdminController {
   async create(req: Request, res: Response) {
     const { name, email, password } = req.body;
@@ -38,7 +40,9 @@ class UserAdminController {
       return;
     }
 
-    const user: any = await UserAdmin.findOne({ where: { email } });
+    const user: any = await UserAdmin.findOne({
+      where: { email },
+    });
 
     if (!user) {
       res
@@ -54,9 +58,7 @@ class UserAdminController {
       return;
     }
 
-    return res
-      .status(200)
-      .json({ message: "Administrador logado com sucesso!", user });
+    await createUserToken(user, req, res);
   }
 
   // static async checkUser(req: Request, res: Response) {
