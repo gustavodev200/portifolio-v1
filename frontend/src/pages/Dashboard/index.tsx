@@ -19,16 +19,36 @@ import TextArea from "../../components/Form/TextArea";
 import ButtonSubmit from "../../components/Form/ButtonSubmit";
 import { NavLogo } from "../../components/layout/Navbar/styles";
 import useAuth from "../../utils/authUser";
+import { ChangeEvent, useState } from "react";
+
+type ImageUpload = {
+  preview: string;
+  raw: any;
+};
 
 const Dashboard = () => {
+  const [image, setImage] = useState({} as ImageUpload);
   const { register, handleSubmit } = useForm<FieldValues>();
   const { projectsAdd } = useAuth();
 
-  // const onSubmit = handleSubmit((data) => projectsAdd(data));
-  const onSubmit = handleSubmit((data) => {
-    const dataObj = data.image[0].name;
-    data.image = dataObj;
-    projectsAdd(data);
+  const handleInputFile = ({ target }: ChangeEvent<HTMLInputElement>) => {
+    const file = target.files?.[0];
+    if (file) {
+      setImage({ preview: URL.createObjectURL(file), raw: file });
+    } else {
+      return null;
+    }
+  };
+
+  const onSubmit = handleSubmit(async (data) => {
+    const formData = new FormData();
+
+    formData.append("image", image.raw);
+    formData.append("title", data.title);
+    formData.append("description", data.description);
+    formData.append("tag", data.tag);
+    formData.append("link", data.link);
+    projectsAdd(formData);
   });
 
   return (
@@ -56,6 +76,7 @@ const Dashboard = () => {
             name="image"
             placeholder="Esolha um arquivo"
             register={register}
+            onChange={handleInputFile}
           />
           <Input
             type="text"

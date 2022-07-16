@@ -1,3 +1,4 @@
+import { ChangeEvent, useState } from "react";
 import { FieldValues, UseFormRegister } from "react-hook-form";
 import styled from "styled-components";
 import bingo_teste from "../../../assets/images/bingo.png";
@@ -9,12 +10,14 @@ type InputProps = {
   name: string;
   placeholder: string;
   register: UseFormRegister<FieldValues>;
+  onChange: (value: ChangeEvent<HTMLInputElement>) => void;
 };
 
 const InputFile: React.FC<InputProps> = ({
   type,
   name,
   placeholder,
+  onChange,
   register,
 }) => {
   return (
@@ -29,6 +32,7 @@ const InputFile: React.FC<InputProps> = ({
         {...register(name)}
         name={name}
         id={name}
+        onChange={onChange}
         required
       />
     </InputContainer>
