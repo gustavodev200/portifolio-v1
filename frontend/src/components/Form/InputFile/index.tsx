@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent } from "react";
 import { FieldValues, UseFormRegister } from "react-hook-form";
 import styled from "styled-components";
 import bingo_teste from "../../../assets/images/bingo.png";
@@ -11,6 +11,7 @@ type InputProps = {
   placeholder: string;
   register: UseFormRegister<FieldValues>;
   onChange: (value: ChangeEvent<HTMLInputElement>) => void;
+  value: any;
 };
 
 const InputFile: React.FC<InputProps> = ({
@@ -19,11 +20,12 @@ const InputFile: React.FC<InputProps> = ({
   placeholder,
   onChange,
   register,
+  value,
 }) => {
   return (
     <InputContainer>
       <ImagemSelected htmlFor={name}>
-        <img src={bingo_teste} alt="Selecione uma imagem" />
+        <img src={value ? value : bingo_teste} alt="Selecione uma imagem" />
         <span>SELECIONAR IMAGEM</span>
       </ImagemSelected>
       <InputFiles

@@ -8,28 +8,32 @@ import {
 } from "./style";
 
 import { AiOutlineLink } from "react-icons/ai";
-import bingo from "../../assets/images/bingo.png";
 
-// type TitlesTypes = {
-//   firstText: string;
-//   secondText: string;
-// };
+type TitlesTypes = {
+  title: string;
+  description: string;
+  link: string;
+  image: string;
+  tag?: string;
+};
 
-const Cards = () => {
+const Cards: React.FC<TitlesTypes> = ({
+  title,
+  description,
+  link,
+  image,
+  tag,
+}) => {
   return (
     <CardWrapper>
-      <CardContent image={bingo}>
+      <CardContent image={image}>
         <CardDetails>
           <CardTitle>
-            <h4>PROJETO - COLLAB BINGO(OPEN SOURCE)</h4>
+            <h4>{title}</h4>
           </CardTitle>
-          <span>
-            Projeto feito com alguns amigos encontrado na comunidade de
-            programação Rocketseat. Projeto feito com alguns amigos encontrado
-            na comunidade de programação.
-          </span>
+          <span>{description}</span>
           <CardButton>
-            <LinkProject href="#">
+            <LinkProject href={`${link}`} target="_blank">
               <AiOutlineLink fontSize={20} />
             </LinkProject>
           </CardButton>

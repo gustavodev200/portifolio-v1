@@ -77,6 +77,7 @@ const Dashboard = () => {
             placeholder="Esolha um arquivo"
             register={register}
             onChange={handleInputFile}
+            value={image.preview}
           />
           <Input
             type="text"

@@ -48,7 +48,7 @@ export default function useAuth() {
     localStorage.setItem("token", JSON.stringify(data.token));
     setToken(JSON.stringify(data.token));
     api.defaults.headers.common["Authorization"] = `Bearer ${data.token}`;
-    navigate("dashboard");
+    navigate("/admin/dashboard");
   }
 
   async function projectsAdd(newproject: any) {
