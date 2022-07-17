@@ -4,6 +4,7 @@ import verifyToken from "../helpers/verify-token";
 const upload = require("../helpers/image-upload");
 const router = express.Router();
 
+router.get("/", ProjectController.allProjects);
 router.post(
   "/admin/dashboard",
   verifyToken,

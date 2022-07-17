@@ -77,6 +77,12 @@ class ProjectController {
       res.status(500).json({ message: error });
     }
   }
+
+  async allProjects(req: Request, res: Response) {
+    const projects = await AddProjects.findAll();
+
+    res.status(200).json({ projects });
+  }
 }
 
 export default new ProjectController();
