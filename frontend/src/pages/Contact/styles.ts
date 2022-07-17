@@ -17,4 +17,8 @@ export const ContactForm = styled.form`
   justify-content: center;
   flex-direction: column;
   margin-top: ${pixelToRem(40)};
+
+  input[type="submit"] {
+    cursor: not-allowed;
+  }
 `;

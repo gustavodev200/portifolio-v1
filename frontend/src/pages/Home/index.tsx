@@ -6,6 +6,7 @@ import {
   WrapperSocialMedia,
   WrapperTags,
 } from "./styles";
+import Profile from "../../assets/pdf/profile.pdf";
 import completed_circle from "../../assets/images/completed_circle.svg";
 import mid_circle from "../../assets/images/mid_circle.svg";
 import home_img from "../../assets/images/home_img.svg";
@@ -30,7 +31,9 @@ const Home = () => {
       </MyPhotoBG>
 
       <ButtonDownloadCV>
-        <a href="#">DOWNLOAD CV</a>
+        <a href={Profile} download={Profile}>
+          DOWNLOAD CV
+        </a>
       </ButtonDownloadCV>
 
       <WrapperTags>

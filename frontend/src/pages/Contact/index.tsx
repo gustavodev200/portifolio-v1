@@ -1,14 +1,20 @@
 import Title from "../../components/Title";
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm, UseFormRegister } from "react-hook-form";
 import Input from "../../components/Form/Input";
 import ButtonSubmit from "../../components/Form/ButtonSubmit";
 import TextArea from "../../components/Form/TextArea";
 import { ContactForm, ContactWrapper } from "./styles";
+import { useState } from "react";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const { register, handleSubmit } = useForm();
+  const [sendEmail, setSendEmail] = useState<any[]>([]);
 
-  const onSubmit = handleSubmit((data) => console.log(data));
+  const onSubmit = handleSubmit((data: any) => {
+    toast.warn("Esse formulário ainda não está disponível!");
+    setSendEmail(data);
+  });
 
   return (
     <ContactWrapper id="contact">

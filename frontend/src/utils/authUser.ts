@@ -2,16 +2,8 @@ import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+
 import api from "./api";
-
-// type User = {
-//   email: string;
-//   password: string;
-// };
-
-// type TypeForm = {
-//   token: string;
-// };
 
 export default function useAuth() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
