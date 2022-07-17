@@ -35,17 +35,16 @@ const Projects = () => {
         <Title firstText="PROJETOS" secondText="GUSTAVO" />
       </TitleProjectPage>
       <CardsWrapper>
-        {myProjects &&
-          myProjects.map((project) => (
-            <Cards
-              key={project.id}
-              title={project.title}
-              tag={project.tag}
-              link={project.link}
-              image={project.image}
-              description={project.description}
-            />
-          ))}
+        {myProjects.map((project) => (
+          <Cards
+            key={project.id}
+            title={project.title}
+            tag={project.tag}
+            link={project.link}
+            image={project.image}
+            description={project.description}
+          />
+        ))}
       </CardsWrapper>
     </ProjectWrapper>
   );

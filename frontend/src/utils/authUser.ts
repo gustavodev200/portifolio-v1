@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import api from "./api";
 
 // type User = {
@@ -35,6 +36,7 @@ export default function useAuth() {
 
       if (status === 200) {
         await authUser(data);
+        toast.success("Bem vindo meu Administrador");
       } else {
         throw new Error(data.message);
       }
@@ -54,7 +56,7 @@ export default function useAuth() {
   async function projectsAdd(newproject: any) {
     await api
       .post("admin/dashboard", newproject)
-      .then((response) => console.log(response.data))
+      .then((response) => toast.success(response.data.message))
       .catch((error) => console.log(error));
   }
 
