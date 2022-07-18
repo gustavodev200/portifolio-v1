@@ -20,7 +20,7 @@ app.use(express.static("public"));
 app.use("/", AdminRoute);
 app.use("/", ProjectsRoute);
 
-app.listen(3333, async () => {
+app.listen(process.env.PORT || 3333, async () => {
   await conn.sync();
   console.log("Server is running!");
 });

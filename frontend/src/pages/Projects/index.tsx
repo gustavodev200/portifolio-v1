@@ -27,7 +27,7 @@ const Projects = () => {
 
   useEffect(() => {
     getProject();
-  }, []);
+  }, [myProjects]);
 
   return (
     <ProjectWrapper id="projects">
@@ -51,13 +51,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-/* <CardsWrapper>
-  <Cards
-    title={project.title}
-    tag={project.tag}
-    link={project.link}
-    image={project.image}
-    description={project.description}
-  />
-</CardsWrapper>; */
