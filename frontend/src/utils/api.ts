@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://api-portifolio-production.up.railway.app/",
   validateStatus: (status) => {
     return true;
   },

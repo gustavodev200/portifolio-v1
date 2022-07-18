@@ -8,6 +8,10 @@ export const ProjectWrapper = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media ${device.laptop} {
+    height: 100vh;
+  }
 `;
 
 export const TitleProjectPage = styled.div`
